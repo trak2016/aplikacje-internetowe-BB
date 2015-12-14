@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@model int
+
+<div id="questionare_content">
+    <h4>Statystyka odpowiedzi dla ankiety - <span data-bind="text: name"></span></h4>
+    <h5>W badaniu wzięło udział - <span data-bind="text: numberOfRespondends"></span></h5>
+    <ul class="questions_list list-unstyled" data-bind="foreach: questions">
+        <li>
+            <div class="row">
+                <div class="row">
+                    <div class="lp">
+                        <label data-bind="text: lp" style="float: left; font-size: 16px; margin-right: 25px;"></label>
+                    </div>
+                    <div class="col-md-11">
+                        <input type="text" class="form-control" placeholder="Treść pytania" data-bind="value: question" />
+                    </div>
+                </div>
+                <div class="answers" data-bind="foreach: answers">
+                    <div class="answer" data-bind="visible: $parent.answerVisible">
+                        <input type="checkbox" data-bind="visible: $parent.manyAnswer" />
+                        <input type="radio" data-bind="visible: $parent.singleAnswer, attr: { name: lp}" />
+                        <input type="text" data-bind="value: optionText" />
+                        <span data-bind="text: statistic"></span> Ankietowanych
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script>
+    var StatisticVM;
+
+    $(document).ready(function () {
+
+        StatisticVM = new statisticVM(@Model);
+
+        ko.applyBindings(StatisticVM, document.getElementById("#questionare_content"));
+    });
+</script>
+
+<style>
+    .container {
+        margin-left: 50px !important;
+    }
+</style>
+
+@section Scripts
+{
+    @Scripts.Render("~/Scripts/ViewModels/StatisticVM.js")
+    @Scripts.Render("~/Scripts/ViewModels/StatisticQuestionVM.js")
+    @Styles.Render("~/Content/Add.css")
+}
+
+
+
+
