@@ -1,4 +1,5 @@
 ﻿using DAL.Models;
+using DAL.Repositores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace DAL.Inerfaces
 {
     public interface IQuestionRepository : IBaseRepository<Question>
     {
+        ObjectOperationResult<int> GetStatisticByQuestionOption(int id);
     }
 }

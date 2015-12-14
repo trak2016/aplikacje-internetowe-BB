@@ -15,6 +15,7 @@ namespace DAL.Entites
 
         public string Name { get; set; }
         public int UserId { get; set; }
+        public int RespondendsNumber {get;set;}
 
         public virtual UserEntity User { get; set; }
         public virtual ICollection<QuestionEntity> Questions { get; set; }

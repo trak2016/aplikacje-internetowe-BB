@@ -164,6 +164,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\QuestionareController.cs" />
+    <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,12 +209,16 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\ViewModels\AnswerVM.js" />
     <Content Include="Scripts\ViewModels\LeftMenuVM.js" />
+    <Content Include="Scripts\ViewModels\ManageVM.js" />
+    <Content Include="Scripts\ViewModels\Manage_SelectedQuestionare.js" />
     <Content Include="Scripts\ViewModels\NewQuestionareFormVM.js" />
     <Content Include="Scripts\ViewModels\NewQuestionareModalVM.js" />
     <Content Include="Scripts\ViewModels\PublishedQuestionareVM.js" />
     <Content Include="Scripts\ViewModels\PublishedQuestionVM.js" />
     <Content Include="Scripts\ViewModels\QuestionOptionVM.js" />
     <Content Include="Scripts\ViewModels\QuestionVM.js" />
+    <Content Include="Scripts\ViewModels\StatisticQuestionVM.js" />
+    <Content Include="Scripts\ViewModels\StatisticVM.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -254,6 +259,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Questionare\Add.cshtml" />
     <Content Include="Views\Questionare\Read.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

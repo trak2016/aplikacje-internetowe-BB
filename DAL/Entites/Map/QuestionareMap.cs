@@ -16,6 +16,7 @@ namespace DAL.Entites.Map
             this.ToTable("Questionare");
             this.Property(x => x.Name).HasColumnName("Name");
             this.Property(x => x.UserId).HasColumnName("UserId");
+            this.Property(x => x.RespondendsNumber).HasColumnName("RespondendsNumber");
 
             this.HasMany(x => x.Questions).WithRequired(x => x.Questionare).HasForeignKey(x => x.QuestionareId);
             this.HasRequired(x => x.User).WithMany(x => x.Questionares).HasForeignKey(x => x.UserId);

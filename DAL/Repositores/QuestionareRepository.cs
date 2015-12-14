@@ -35,5 +35,39 @@ namespace DAL.Repositores
                 return new ObjectOperationResult<Questionare>(false, true, "Błąd serwera podczas pobierania kwestionariusza ");
             }
         }
+
+
+        public ObjectOperationResult<IEnumerable<Questionare>> GetList(int userId)
+        {
+            try
+            {
+                var questionare = _context.Questionares.Where(x => x.UserId == userId).ToList().Select(x=>new Questionare(x)).ToList();
+
+                return new ObjectOperationResult<IEnumerable<Questionare>>("Pobrano pomyślnie", questionare);
+            }
+            catch (Exception ex)
+            {
+               return new ObjectOperationResult<IEnumerable<Questionare>>(false, true, "Błąd serwera podczas pobierania kwestionariusza ");
+            }
+        }
+
+
+        public void IncrementQuestionareNumber(int questionId)
+        {
+            try
+            {
+                var question = _context.Questions.FirstOrDefault(x=>x.Id == questionId);
+                var questionare = _context.Questionares.FirstOrDefault(x => x.Id == question.QuestionareId);
+
+                questionare.RespondendsNumber++;
+
+                _context.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {              
+                throw;
+            }
+        }
     }
 }

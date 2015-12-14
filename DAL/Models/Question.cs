@@ -21,6 +21,7 @@ namespace DAL.Models
             QuestionareId = questionEntity.QuestionareId;
             Type = questionEntity.Type;
             Options = questionEntity.QuestionOptions != null ? questionEntity.QuestionOptions.Select(x=> new QuestionOption(x)).ToList() : new List<QuestionOption>();
+            Answers = questionEntity.Answers != null ? questionEntity.Answers.Select(x => new Answer(x)).ToList() : new List<Answer>();
         }
 
         internal QuestionEntity GetEntity()
@@ -40,6 +41,7 @@ namespace DAL.Models
         public int QuestionareId { get; set; }
         public int Type { get; set; }
         public List<QuestionOption> Options { get; set; }
+        public List<Answer> Answers { get; set; }
 
     }
 }

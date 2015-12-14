@@ -19,7 +19,8 @@ namespace DAL.Models
             Id = questionareEntity.Id;
             Name = questionareEntity.Name;
             UserId = questionareEntity.UserId;
-            Questions = questionareEntity.Questions.Select(x => new Question(x)).ToList();
+            RespondendsNumber = questionareEntity.RespondendsNumber;
+            Questions =  questionareEntity.Questions != null ? questionareEntity.Questions.Select(x => new Question(x)).ToList() : null;
         }
 
         internal QuestionareEntity GetEntity()
@@ -29,12 +30,14 @@ namespace DAL.Models
                 Id = this.Id,
                 Name = this.Name,
                 UserId = this.UserId,
+                RespondendsNumber = this.RespondendsNumber
             };
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public int UserId { get; set; }
+        public int RespondendsNumber { get; set; }
         public List<Question> Questions { get; set; }
     }
 }

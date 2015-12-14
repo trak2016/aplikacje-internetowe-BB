@@ -20,6 +20,8 @@ namespace QuertionnaireCreator.Controllers
 
             var result = _unitOfWork.AnswerRepository.Add(answer);
 
+            _unitOfWork.QuestionareRepository.IncrementQuestionareNumber(questionId);
+
             return Json(result);
         }
     }
