@@ -31,7 +31,7 @@
             if (result.HasSucces) { 
                 self.id = result.CurrentObject.Id;
                 self.name(result.CurrentObject.Name);
-                self.numberOfRespondends(result.CurrentObject.numberOfRespondends);
+                self.numberOfRespondends(result.CurrentObject.RespondendsNumber);
                 $.each(result.CurrentObject.Questions, function (key, value) {
                     self.questions.push(new statisticQuestionVM(key, value));
                 });

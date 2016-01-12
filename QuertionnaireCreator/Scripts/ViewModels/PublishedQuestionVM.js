@@ -51,9 +51,11 @@
                 });
                 break;
             case 2:
-                self.singleAnswer(false);
-                self.manyAnswer(true);
-                self.answerVisible(true);
+                ko.utils.arrayForEach(self.answers(), function (answer) {
+                    if (answer.isSelected()) {
+                        save(answer.id);
+                    }
+                });
                 break;
             case 3:
                 self.singleAnswer(false);

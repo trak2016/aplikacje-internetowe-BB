@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestionnaireCreator", "Que
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{72D10E91-BD91-427C-B3B5-BB32BDE1D8F7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EXTRA", "EXTRA", "{D317F2DA-9712-4878-9ADF-6754B3A20B53}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\baza.png = ..\..\..\..\Desktop\baza.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

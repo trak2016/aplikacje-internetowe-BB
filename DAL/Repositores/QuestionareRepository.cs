@@ -52,12 +52,11 @@ namespace DAL.Repositores
         }
 
 
-        public void IncrementQuestionareNumber(int questionId)
+        public void IncrementQuestionareNumber(int id)
         {
             try
             {
-                var question = _context.Questions.FirstOrDefault(x=>x.Id == questionId);
-                var questionare = _context.Questionares.FirstOrDefault(x => x.Id == question.QuestionareId);
+                var questionare = _context.Questionares.FirstOrDefault(x => x.Id == id);
 
                 questionare.RespondendsNumber++;
 

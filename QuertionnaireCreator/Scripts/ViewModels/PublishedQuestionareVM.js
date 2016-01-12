@@ -13,6 +13,8 @@
             question.save();
         });
 
+        incrementRespondendsNumber();
+
         self.formVisibility(false);
     };
 
@@ -23,6 +25,14 @@
                 question.unselectAllOptions();
             }
         });
+    };
+
+    function incrementRespondendsNumber() {
+        $.post("/Answer/IncrementRespondendsNumber", { id: self.id }, function (result) {
+            if (result.HasSucces) {
+
+            }
+        }).done(function (e) { }).fail(function (e) { });
     };
 
     function getQuestionare()
